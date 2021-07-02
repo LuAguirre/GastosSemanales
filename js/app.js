@@ -126,6 +126,14 @@ class UI {
         if(restante <= 0 ) {
             ui.imprimirAlerta('El presupuesto se ha agotado', 'error');
             formulario.querySelector('button[type="submit"]').disabled = true;
+            setTimeout(function(){ 
+                var resultado = window.confirm('Deseas ingresar otro presupuesto?')
+
+                if(resultado === true){
+                    location.reload();
+                }
+                
+            }, 5000);
         } 
     }
 
@@ -135,6 +143,7 @@ class UI {
         }
     }
 }
+
 
 
 
